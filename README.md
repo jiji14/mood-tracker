@@ -1,6 +1,4 @@
-# Mood Tracker
-
-## Project Description
+## Mood Tracker
 This app serves as a mood tracker that enables users to log their daily moods.
 
 ## Member
