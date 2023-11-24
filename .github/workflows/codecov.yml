@@ -15,3 +15,9 @@ jobs:
           flags: test
           files: ./coverage/*.json
           verbose: true
+      
+      - name: Comment on PR with Codecov information
+        run: |
+          bash <(curl -s https://codecov.io/bash) -f coverage/*.json -F test
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
