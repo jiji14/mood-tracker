@@ -12,10 +12,13 @@ jobs:
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          flags: test
-          files: ./coverage/*.json
-          verbose: true
+          files: ./path/to/coverage/*.json
       
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'  # Specify the Python version you need
+          
       - name: Comment on PR with Codecov information
         run: |
           bash <(curl -s https://codecov.io/bash) -f coverage/*.json -F test
