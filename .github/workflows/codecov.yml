@@ -21,7 +21,9 @@ jobs:
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
-        with:
-          files: ./coverage/coverage-final.json
-          flags: unit
-          fail_ci_if_error: ${{ github.repository == 'jiji14/mood-tracker' }}
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        # with:
+        #   files: ./coverage/coverage-final.json
+        #   flags: unit
+        #   fail_ci_if_error: ${{ github.repository == 'jiji14/mood-tracker' }}
