@@ -24,3 +24,4 @@ jobs:
         with:
           files: ./coverage/coverage-final.json
           flags: unit
+          fail_ci_if_error: ${{ github.repository == 'jiji14/mood-tracker' }}
